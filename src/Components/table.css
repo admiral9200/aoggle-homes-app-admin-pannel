@@ -1,0 +1,45 @@
+.table-main{
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allpost-table {
+  height: 100%;
+  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+  }
+  
+  .allpost-table table {
+    height: 100%;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+ .allpost-table th {
+    height: 5rem;
+    background-color: #ccc;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+  }
+  
+ .allpost-table td {
+  
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+ .allpost-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+ .allpost-table tr:hover {
+    background-color: #ddd;
+  }
+  
