@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import "../../Components/GlobalStyle.css"
 
-
-function Main({ dashboardData }) {
+/**
+ * @desc This function component is used to display the data in main part on dashboard...
+ * @param {*} param0 
+ * @returns {*} DOM
+ */
+const Main = ({ dashboardData }) => {
     const [date, setDate] = useState(new Date().toISOString().substr(0, 10));
     return (
         <main>
             <h1>Dashboard</h1>
+            {/* date component */}
             <div className="date">
                 <input type="date" id="myDate" value={date} onChange={(e) => setDate(e.target.value)} />
             </div>
+
+            {/* Main three blocks */}
             <div className="insights">
                 <div className="sales">
-                    <span class="material-icons-sharp">analytics</span>
+                    <span className="material-icons-sharp">analytics</span>
                     <div className="middle">
                         <div className="left">
                             <h3>Total Posts/ Videos</h3>
@@ -32,7 +39,7 @@ function Main({ dashboardData }) {
                 {/* END OF SALES */}
 
                 <div className="expenses">
-                    <span class="material-icons-sharp">bar_chart</span>
+                    <span className="material-icons-sharp">bar_chart</span>
                     <div className="middle">
                         <div className="left">
                             <h3>Approved Videos</h3>
@@ -52,7 +59,7 @@ function Main({ dashboardData }) {
                 {/* END OF expenses */}
 
                 <div className="income">
-                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <span className="material-icons-sharp">stacked_line_chart</span>
                     <div className="middle">
                         <div className="left">
                             <h3>Unapproved Videos</h3>

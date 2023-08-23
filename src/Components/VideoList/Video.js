@@ -1,10 +1,21 @@
 import React from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 import "../GlobalStyle.css"
-function Video({ item }) {
 
+/**
+ * @desc This function component is used to display one video item...
+ * @param {*} param0 
+ * @returns {*} DOM
+ */
+const Video = ({ item }) => {
+    /**
+     * @desc This function is used to approve a post...
+     * @param {*} item 
+     * @returns 
+     */
     const handleApprovePost = async (item) => {
         const data = {
             postId: item._id
@@ -15,7 +26,7 @@ function Video({ item }) {
                 await axios.post("http://localhost:3000/admin/set-approved", data).then((response) => {
                     console.log(response)
                     if (response.data.status === 'success') {
-                        // toast.success(response.data.message);
+                        toast.success(response.data.message);
                         window.location.reload()
                         return null;
                     } else {
@@ -50,20 +61,23 @@ function Video({ item }) {
 
     }
 
-
+    /**
+     * @desc This function is used to remove an item from approved items...
+     * @param {*} item 
+     */
     const handleRemovePost = async (item) => {
         const data = {
             postId: item._id
         }
         try {
             await axios.post("http://localhost:3000/delete-post", data).then((response) => {
-            if(response.data.status === 'success'){
-                window.location.reload()
-                // toast.success(response.data.message);
-                return null;
-            }else{
-                toast.success(response.data.message);
-            }
+                if (response.data.status === 'success') {
+                    window.location.reload()
+                    // toast.success(response.data.message);
+                    return null;
+                } else {
+                    toast.success(response.data.message);
+                }
             })
         } catch (error) {
 

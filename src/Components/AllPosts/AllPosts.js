@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 import "../table.css"
-function AllPosts({ dashboardData }) {
+
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
+const AllPosts = ({ dashboardData }) => {
     const handleApprovePost = async (item) => {
         const data = {
             postId: item._id
